@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Seek
 
     //declare variables for the widgets
     private EditText editTextBillAmount;
-    private TextView textViewBillAmount;
     private TextView textView;
     private TextView tipAmount;
     private TextView totalAmount;
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Seek
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
         calculate();
     }
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Seek
             calculate();
 
         } catch(Exception e){
-         
+
             totalAmount.setText(currencyFormat.format(0));
             tipAmount.setText(currencyFormat.format(0));
             billAmount = 0;
